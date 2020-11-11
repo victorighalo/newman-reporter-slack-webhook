@@ -4,6 +4,7 @@ const generateReport = require('./lib/report');
 
 class SlackWebhookReporter {
     constructor(emitter, reporterOptions) {
+        
         const backticks = '```';
         let webhook = process.env.SLACK_WEBHOOK_URL || reporterOptions.url;
         let title = process.env.SLACK_WEBHOOK_MSG_TITLE || reporterOptions.title;
@@ -21,7 +22,12 @@ class SlackWebhookReporter {
                     text: text,
                 };
                 
-                slackAlert(webhook,msg)
+                slackAlert(webhook,msg).then(res=>{
+                    console.log('notification sent to slack')
+                }).catch(e=>{
+                    console.log('error sending notification to slack')
+                    console.log(e)
+                })
             } catch (e) {
                 console.log(e);
             }

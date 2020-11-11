@@ -28,4 +28,4 @@ SLACK_WEBHOOK_MSG_HEADER='newman run header'
 ```
 
 ### Run newman test with the reporter option `-r slack`
-    newman run my-collection.postman_collection.json -r cli,slackwebhook  --reporter-slackwebhook-url 'https://hooks.slack.com/services/xxx/yyy/zzzzzzzzzzzz' --reporter-slackwebhook-title 'External API Tests' --reporter-slackwebhook-header 'API Tests' 
+    newman run my-collection.postman_collection.json -x -r cli,slackwebhook  --reporter-slackwebhook-url 'https://hooks.slack.com/services/xxx/yyy/zzzzzzzzzzzz' --reporter-slackwebhook-title 'External API Tests' --reporter-slackwebhook-header 'API Tests' 
