@@ -1,4 +1,4 @@
-# newman-reporter-slack
+# newman-reporter-slackwebhook
 
 A [newman](https://github.com/postmanlabs/newman) reporter for [slack](https://slack.com/)
 
@@ -14,19 +14,18 @@ newman run
 | total run duration       | 100ms |         |
 
 ## Installation
-    npm install newman-reporter-slack
+    npm install newman-reporter-slackwebhook
 
 ## Usage
 
-### Set the reporter options
+### Set the reporter options as environment variables
 
-Reporter option can be set as environment variables or from reporter options arguments
+Create a .env file in the root of your project and add these configurations. 
 ```
-export SLACK_WEBHOOK_URL='https://hooks.slack.com/services/xxx/yyy/zzzzzzzzzzzz'
-export SLACK_CHANNEL='#slack-channel'
-export TITLE='newman run title'
-export HEADER='newman run header'
+SLACK_WEBHOOK_URL='https://hooks.slack.com/services/xxx/yyy/zzzzzzzzzzzz'
+SLACK_WEBHOOK_MSG_TITLE='newman run title'
+SLACK_WEBHOOK_MSG_HEADER='newman run header'
 ```
 
 ### Run newman test with the reporter option `-r slack`
-    newman run my-collection.postman_collection.json -r cli,slack --reporter-slack-channel '#slack-channel' --reporter-slack-webhook-url 'https://hooks.slack.com/services/xxx/yyy/zzzzzzzzzzzz'
+    newman run my-collection.postman_collection.json -r cli,slackwebhook  --reporter-slackwebhook-url 'https://hooks.slack.com/services/xxx/yyy/zzzzzzzzzzzz' --reporter-slackwebhook-title 'External API Tests' --reporter-slackwebhook-header 'API Tests' 

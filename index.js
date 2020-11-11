@@ -1,29 +1,32 @@
 const { IncomingWebhook } = require('@slack/webhook');
-let markdowntable = require('markdown-table');
-let prettyms = require('pretty-ms');
 const slackAlert = require('./lib/slack');
 const generateReport = require('./lib/report');
 
-class SlackReporter {
+class SlackWebhookReporter {
     constructor(emitter, reporterOptions) {
-        console.log('local slack reporter')
         const backticks = '```';
-        let title = process.env.TITLE || reporterOptions.title;
-        let header = process.env.HEADER || reporterOptions.header || '';
+        let webhook = process.env.SLACK_WEBHOOK_URL || reporterOptions.url;
+        let title = process.env.SLACK_WEBHOOK_MSG_TITLE || reporterOptions.title;
+        let header = process.env.SLACK_WEBHOOK_MSG_HEADER || reporterOptions.header || '';
 
         emitter.on('done', (err, summary) => {
             if (err) {
                 return;
             }
-            let table = generateReport(title,header,summary);
-            let text = `${title}\n${backticks}${table}${backticks}`;
-            let msg = {
-                text: text,
-            };
 
-            slackAlert(msg);
+            try {
+                let table = generateReport(title, header, summary);
+                let text = `${title}\n${backticks}${table}${backticks}`;
+                let msg = {
+                    text: text,
+                };
+                
+                slackAlert(webhook,msg)
+            } catch (e) {
+                console.log(e);
+            }
         });
     }
 }
 
-module.exports = SlackReporter;
+module.exports = SlackWebhookReporter;

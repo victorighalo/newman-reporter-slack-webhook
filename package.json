@@ -1,7 +1,7 @@
 {
-  "name": "newman-reporter-slack",
-  "version": "1.2.0",
-  "description": "A newman reporter for slack",
+  "name": "newman-reporter-slackwebhook",
+  "version": "1.0.0",
+  "description": "A newman reporter for sending reports to slack webhook URL",
   "main": "index.js",
   "scripts": {
     "test": "mocha",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/avidit/newman-reporter-slack"
+    "url": "https://github.com/victorighalo/newman-reporter-slack-webhook"
   },
   "keywords": [
     "newman",
@@ -19,9 +19,9 @@
   "author": "aabishkar@gmail.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/avidit/newman-reporter-slack/issues"
+    "url": "https://github.com/victorighalo/newman-reporter-slack-webhook/issues"
   },
-  "homepage": "https://github.com/avidit/newman-reporter-slack#readme",
+  "homepage": "https://github.com/victorighalo/newman-reporter-slack-webhook#readme",
   "dependencies": {
     "@slack/webhook": "^5.0.3",
     "dotenv": "^8.2.0",
