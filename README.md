@@ -22,9 +22,9 @@ newman run
 
 Create a .env file in the root of your project and add these configurations. 
 ```
-SLACK_WEBHOOK_URL='https://hooks.slack.com/services/xxx/yyy/zzzzzzzzzzzz'
-SLACK_WEBHOOK_MSG_TITLE='newman run title'
-SLACK_WEBHOOK_MSG_HEADER='newman run header'
+export SLACK_WEBHOOK_URL='https://hooks.slack.com/services/xxx/yyy/zzzzzzzzzzzz'
+export SLACK_WEBHOOK_MSG_TITLE='newman run title'
+export SLACK_WEBHOOK_MSG_HEADER='newman run header'
 ```
 
 ### Run newman test with the reporter option `-r slack`
