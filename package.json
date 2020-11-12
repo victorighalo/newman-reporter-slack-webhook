@@ -16,7 +16,7 @@
     "postman",
     "slack"
   ],
-  "author": "aabishkar@gmail.com",
+  "author": "victorighalo@gmail.com",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/victorighalo/newman-reporter-slack-webhook/issues"
@@ -24,7 +24,6 @@
   "homepage": "https://github.com/victorighalo/newman-reporter-slack-webhook#readme",
   "dependencies": {
     "@slack/webhook": "^5.0.3",
-    "dotenv": "^8.2.0",
     "markdown-table": "^1.1.2",
     "pretty-ms": "^3.2.0"
   },
