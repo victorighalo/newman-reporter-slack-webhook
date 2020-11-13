@@ -1,6 +1,6 @@
 {
   "name": "newman-reporter-slackwebhook",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A newman reporter for sending reports to slack webhook URL",
   "main": "index.js",
   "scripts": {
